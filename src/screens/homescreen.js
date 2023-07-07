@@ -16,32 +16,44 @@ const homescreen = () => {
         <SafeAreaView style= {{marginHorizontal: 20,}}>
             {/*el comp SafeAreaView es para que el contenido de la pantalla se acople correctamente al disp */}
 
-            {/*Contenedor del input */}
-            <View>
-                <TextInput>
-                    onChange= {setTask}
-                    placeholder = "Agregar una tarea"
-                    style= {styles.input}
-                    value= {task}
-                </TextInput>
-                <View style= {{marginVertical: 10, flexDirection: 'row'}}>
-                    <TouchableOpacity
-                        style= {[styles.button, styles.acceptButton]}
-                    >
-                        <Text style= {styles.ButtonText}>Agregar</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style= {[styles.button, styles.cancelButton]}
-                    >
-                        <Text style= {styles.ButtonText}>Cancelar</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
 
+            {/*La variable de estado está en falso para que oculte los botones */}
+            {/*Aquí estan los botones agregar y cancelar */}
+            {
+                
+                addNew && (
+                   
+                    <View>
+                        <TextInput>
+                            onChange= {setTask}
+                            placeholder = "Agregar una tarea"
+                            style= {styles.input}
+                            value= {task}
+                        </TextInput>
+                        <View style= {{marginVertical: 10, flexDirection: 'row'}}>
+                            <TouchableOpacity
+                                style= {[styles.button, styles.acceptButton]}
+                            >
+                                <Text style= {styles.ButtonText}>Agregar</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style= {[styles.button, styles.cancelButton]}
+                            >
+                                <Text style= {styles.ButtonText}>Cancelar</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                )
+            }
 
             {/*Agregar tarea */}
             <View style = {styles.addButtonLocator}>
-                <TouchableOpacity style ={styles.addButton}>
+                <TouchableOpacity 
+                    style ={styles.addButton}
+                    //se declara una funcion anonima para envitar que suceda un ciclo infinito
+                    onPress={ () => setAddNew(true) }
+                    >
                     <Text style = {styles.addButtonText}>+</Text>
                 </TouchableOpacity>
             </View>
