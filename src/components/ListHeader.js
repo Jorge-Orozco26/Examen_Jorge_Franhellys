@@ -4,8 +4,8 @@ import {View, Text } from 'react-native'
 const ListHeader = () => {
 
     return(
-        <View>
-            <Text></Text>
+        <View style = {{marginBottom: 10}}>
+            <Text style = {{fontSize: 20, fontWeight: 'bold',}}>Actividades del día</Text>
         </View>
     )
 }

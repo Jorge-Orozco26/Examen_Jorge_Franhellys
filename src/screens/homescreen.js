@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react'
 import { Dimensions, FlatList, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import ListHeader from '../components/ListHeader'
 
 {/* Para obtener los datos de las dimensiones del dispositivo*/}
 const screenHeight = Dimensions.get("screen").height
@@ -74,6 +75,7 @@ const homescreen = () => {
                     data = { tasks}
                     keyExtractor={(item) => item}
                     renderItem= { ({item, index}) => <TaskItem task = "" index = { index } onPress = {() => deleteTask(index) }  /> }
+                    ListHeaderComponent={ () => <ListHeader /> }
                 />
             </View>
 
