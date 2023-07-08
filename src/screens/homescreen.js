@@ -76,6 +76,7 @@ const homescreen = () => {
                     keyExtractor={(item) => item}
                     renderItem= { ({item, index}) => <TaskItem task = "" index = { index } onPress = {() => deleteTask(index) }  /> }
                     ListHeaderComponent={ () => <ListHeader /> }
+                    ItemSeparatorComponent={ () => <View style = {{marginVertical: 4,}} /> }
                 />
             </View>
 
