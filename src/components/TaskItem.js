@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
-const TaskItem = ({ task, index}) => {
+const TaskItem = ({ onPress, task }) => {
 
     return(
         <View style = {styles.container}>
             <TouchableOpacity 
                 style = {styles.button} 
+                onPress={ onPress }
             />
             <Text style = {styles.text}>{ task }</Text>
         </View>

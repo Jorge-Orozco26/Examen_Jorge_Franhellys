@@ -11,7 +11,7 @@ const homescreen = () => {
 
     const [addNew, setAddNew] = useState(false)
     const [task, setTask] = useState('')
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useState(['Primer tarea del dia'])
 
     const addTask = () =>{
         {/*Agregar la tarea o task a este arreglo */}
@@ -20,6 +20,18 @@ const homescreen = () => {
 
         setTask('')
         setAddNew(false)
+    }
+
+    const deleteTask = (index) =>  {
+
+        //creamos arreglo temporal
+        //los tres puntos se utilizan para realizar una operación llamada propagación
+        //Al utilizar los tres puntos antes de un array, se expande el contenido del array en el nuevo array.
+        //sirve para saber en que posicion queremos eliminar
+        //el 1 es para indicar que solo un elemento del Arreglo
+        let temp = [...tasks]
+        temp.splice(index, 1)
+        setTask(temp)
     }
 
     return (
@@ -61,7 +73,7 @@ const homescreen = () => {
                 <FlatList
                     data = { tasks}
                     keyExtractor={(item) => item}
-                    renderItem= { ({item, index}) => <TaskItem task = "" index = { index } /> }
+                    renderItem= { ({item, index}) => <TaskItem task = "" index = { index } onPress = {() => deleteTask(index) }  /> }
                 />
             </View>
 
