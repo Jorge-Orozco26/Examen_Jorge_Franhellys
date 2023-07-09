@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    backgroundColor: '#212121',
+    backgroundColor: 'white',
     padding: 10,
     borderRadius: 10,
     flexDirection: 'row',
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: 'white',
+    color: 'black',
     marginLeft: 10,
   },
 });
