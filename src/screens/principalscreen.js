@@ -1,16 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import HomeScreen from './HomeScreen';
 
-const WelcomeScreen = ({ navigation }) => {
+
+const Principalscreen = ({ navigation }) => {
   const goToTaskScreen = () => {
-    navigation.navigate('homescreen'); 
+    navigation.navigate('homescreen');
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Aplicación para gestionar tareas domésticas</Text>
+      <Text style={styles.title}>Aplicación de gestión de tareas domésticas</Text>
       <TouchableOpacity style={styles.button} onPress={goToTaskScreen}>
-        <Text style={styles.buttonText}>Agregar Tareas</Text>
+        <Text style={styles.buttonText}>Iniciar</Text>
       </TouchableOpacity>
     </View>
   );
@@ -21,26 +23,26 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f9f9f9',
+    paddingHorizontal: 16,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: 24,
     textAlign: 'center',
   },
   button: {
-    backgroundColor: '#4caf50',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
+    backgroundColor: '#2e9fff',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
   },
   buttonText: {
-    color: '#ffffff',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
+    color: '#ffffff',
   },
 });
 
-export default WelcomeScreen;
+export default Principalscreen;
