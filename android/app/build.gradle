@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.examen_jorge_franhellys"
+    namespace "com.appdomestic"
     defaultConfig {
-        applicationId "com.examen_jorge_franhellys"
+        applicationId "com.appdomestic"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

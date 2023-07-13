@@ -1,17 +1,17 @@
 /* eslint-disable prettier/prettier */
-
 import React from 'react';
-import Homescreen from './src/screens/HomeScreen';
+import AppNavigator from './src/navigation/AppNavigator';
+import { AuthProvider } from './src/AuthContext';
+import { TaskProvider } from './src/TaskContext';
 
-
-function App(): JSX.Element {
-
+function App() {
   return (
-
-  <Homescreen />
-
+    <AuthProvider>
+      <TaskProvider>
+        <AppNavigator />
+      </TaskProvider>
+    </AuthProvider>
   );
 }
-
 
 export default App;
