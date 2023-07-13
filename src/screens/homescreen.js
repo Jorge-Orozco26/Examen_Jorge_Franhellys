@@ -13,7 +13,7 @@ const screenHeight = Dimensions.get("screen").height
 
 const homescreen = () => {
 
-    <NavigationContainer></NavigationContainer>
+
     const [addNew, setAddNew] = useState(false)
     const [task, setTask] = useState('')
     const [tasks, setTasks] = useState(['Primer tarea del dia'])
